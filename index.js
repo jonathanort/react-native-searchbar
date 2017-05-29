@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   Animated,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import FontAwesome, { Icons } from 'react-native-fontawesome';
 import { filter, some, includes } from 'lodash/collection';
 import { debounce } from 'lodash/function';
 
@@ -246,14 +246,10 @@ export default class Search extends Component {
               backButton ?
               <View style={{width: backCloseSize, height: backCloseSize}} >{backButton}</View>
               :
-              <Icon
-                name='arrow-back'
-                size={backCloseSize}
-                style={{
+              <FontAwesome style={{
                   color: iconColor,
                   padding: heightAdjust / 2 + 10
-                }}
-              />
+                }}>{Icons.ccVisa}</FontAwesome>
               }
             </TouchableOpacity>
           }
@@ -288,14 +284,12 @@ export default class Search extends Component {
               closeButton ?
               <View style={{width: backCloseSize, height: backCloseSize}} >{closeButton}</View>
               :
-              <Icon
-                name={'close'}
-                size={backCloseSize}
+              <FontAwesome
                 style={{
                   color: hideX || this.state.input == '' ? backgroundColor : iconColor,
                   padding: heightAdjust / 2 + 10
                 }}
-              />
+              >{Icons.ccVisa}</FontAwesome>
               }
             </TouchableOpacity>
           </View>
